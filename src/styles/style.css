@@ -845,21 +845,57 @@ body.nav-active { overflow: hidden; }
 
 .footer .logo { margin-block-end: 20px; }
 
+.contact-list.has-after {
+  position: relative;
+}
+
+.contact-list.has-after::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 2px;
+  height: 60%;
+  background-color: var(--white_a20);
+  transform: translate(-50%, -50%);
+}
+
 .contact-item {
   display: flex;
   align-items: flex-start;
   gap: 12px;
-  margin-block-start: 12px;
+  margin: 0;
+  padding: 16px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  flex: 1;
+  min-width: 250px;
 }
 
-.contact-item .item-icon { font-size: 4rem; }
+.contact-item .item-icon { 
+  font-size: 3rem;
+  color: var(--verdigris);
+  flex-shrink: 0;
+}
+
+.contact-item p {
+  margin: 4px 0;
+  color: var(--white);
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
 
 .contact-link {
   display: inline;
   transition: var(--transition-1);
+  color: var(--alice-blue);
+  font-weight: 500;
 }
 
-.contact-link:is(:hover, :focus-visible) { color: var(--verdigris); }
+.contact-link:is(:hover, :focus-visible) { 
+  color: var(--verdigris);
+  text-decoration: underline;
+}
 
 .footer-list-title {
   color: var(--white);
